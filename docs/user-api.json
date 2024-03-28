@@ -19,11 +19,11 @@
                         "application/json": {
                             "examples": {
                                 "khannedy": {
-                                    "description": "Register user Ridhwan",
+                                    "description": "Register user Hamtut",
                                     "value": {
-                                        "username": "Ridhwannn",
-                                        "password": "22091397047",
-                                        "name": "Ridhwan Fachrul Arief"
+                                        "username": "Ilhamtut",
+                                        "password": "069",
+                                        "name": "M.Ilham Al Faridsi"
                                     }
                                 }
                             },
@@ -84,8 +84,8 @@
                                         "value": {
                                             "data": {
                                                 "id": 1,
-                                                "name": "Ridhwan Fachrul Arief",
-                                                "username": "Ridhwannn"
+                                                "name": "M.Ilham Al Faridsi",
+                                                "username": "Ilhamtut"
                                             }
                                         }
                                     }

@@ -35,7 +35,7 @@ class UserController extends Controller
         $user->password = Hash::make($data['password']);
         $user->save();
 
-        return (new UserResource($user))->response()->setStatusCode(201);
+        return (new UserResource($user))->response()->setStatuscode(201);
     }
 
     public function login(UserLoginRequest $request): UserResource
@@ -89,6 +89,6 @@ class UserController extends Controller
 
         return response()->json([
             "data" => true
-        ])->setStatusCode(200);
+        ])->setStatuscode(200);
     }
 }

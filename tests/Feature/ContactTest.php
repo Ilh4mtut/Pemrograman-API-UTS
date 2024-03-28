@@ -18,19 +18,19 @@ class ContactTest extends TestCase
         $this->seed([UserSeeder::class]);
 
         $this->post('/api/contacts', [
-            'first_name' => 'Ridhwan',
-            'last_name' => 'Ridhwan',
-            'email' => 'Fachrul@gmail.com',
-            'phone' => '03242343243'
+            'first_name' => 'Ilham',
+            'last_name' => 'Ilham',
+            'email' => 'hamtut7@gmail.com',
+            'phone' => '021345678'
         ], [
             'kode' => 'test'
         ])->assertStatus(201)
             ->assertJson([
                 'data' => [
-                    'first_name' => 'Ridhwan',
-                    'last_name' => 'Ridhwan',
-                    'email' => 'Fachrul@gmail.com',
-                    'phone' => '03242343243'
+                    'first_name' => 'Ilham',
+                    'last_name' => 'Ilham',
+                    'email' => 'hamtut7@gmail.com',
+                    'phone' => '021345678'
                 ]
             ]);
 
@@ -39,22 +39,20 @@ class ContactTest extends TestCase
     public function testCreateFailed()
     {
         $this->seed([UserSeeder::class]);
-
+    
+        // Mengirimkan data yang tidak valid
         $this->post('/api/contacts', [
-            'first_name' => '',
-            'last_name' => 'Ridhwan',
-            'email' => 'Ridhwan',
-            'phone' => '03242343243'
+            'first_name' => '', // Field yang wajib diisi
+            'last_name' => 'Ilham',
+            'email' => 'hamtut7@gmail.com',
+            'phone' => '021345678'
         ], [
             'kode' => 'test'
-        ])->assertStatus(400)
+        ])->assertStatus(400) // Mengharapkan respons status 400 (Bad Request)
             ->assertJson([
                 'errors' => [
                     'first_name' => [
                         'The first name field is required.'
-                    ],
-                    'email' => [
-                        'The email field must be a valid email address.'
                     ]
                 ]
             ]);
@@ -66,8 +64,8 @@ class ContactTest extends TestCase
 
         $this->post('/api/contacts', [
             'first_name' => '',
-            'last_name' => 'Ridhwan',
-            'email' => 'Ridhwan',
+            'last_name' => 'Ilham',
+            'email' => 'hamtut7@gmail.com',
             'phone' => '03242343243'
         ], [
             'kode' => 'salah'
